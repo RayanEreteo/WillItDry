@@ -10,9 +10,9 @@ form?.addEventListener("submit", (e) => {
 
 async function fetchWeather(city:string) {
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ce86501f43804acd8bb5f670c9ff1800`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20370396598f014dfec9a4efab56a08f`)
     const data = response.json()
-    
+
     console.log(data) 
   } catch (error) {
     
