@@ -12,15 +12,20 @@ form.addEventListener("submit", (e) => {
 })
 
 async function fetchWeather(city:string) {
-  resultContainer.style.display = "block"
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20370396598f014dfec9a4efab56a08f`)
     const data = response.json()
 
-    console.log(data) 
+    updateResultUI(data)
+    resultContainer.style.display = "block"
   } catch (error) {
-    console.log(error)  
+    console.log(error)
   } finally {
     submitBtn.disabled = false
   }
+}
+
+function updateResultUI(data: Promise<any>){
+  const logo = document.getElementById("result-logo") as HTMLImageElement
+  logo.src = "/rain.svg"
 }
