@@ -84,3 +84,14 @@ button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+/* Results styling */
+.results-container {
+  margin-top: 2rem;
+  text-align: center;
+  
+}
+
+#result-logo {
+  width: 100px;
+}
