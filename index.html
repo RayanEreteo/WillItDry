@@ -1,13 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Will It Dry ?</title>
-    <script type="module" src="/src/main.ts" defer></script>
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will It Dry ?</title>
+  <script type="module" src="/src/main.ts" defer></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <header>
+        <h1>Will It Dry? 🧺</h1>
+        <p>Check if today is a good day for laundry.</p>
+      </header>
+
+      <form class="search-form" id="dry-form">
+        <div class="input-group">
+          <input type="text" id="city-input" placeholder="Enter your city..." required />
+          <button type="submit" id="submit-btn">
+            <span>Check Weather</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>
