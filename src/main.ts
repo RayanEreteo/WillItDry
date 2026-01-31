@@ -1,9 +1,10 @@
 // HTML elements ref
 const form = document.getElementById("dry-form")
 const input = document.getElementById("city-input") as HTMLInputElement
-const submitBtn = document.getElementById("submit-btn")
+const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement
 
 form?.addEventListener("submit", (e) => {
+  submitBtn.disabled = true
   e.preventDefault()
   fetchWeather(input.value)
 })
@@ -15,6 +16,8 @@ async function fetchWeather(city:string) {
 
     console.log(data) 
   } catch (error) {
-    
+    console.log(error)  
+  } finally {
+    submitBtn.disabled = false
   }
 }
