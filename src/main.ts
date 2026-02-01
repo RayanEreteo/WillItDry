@@ -11,12 +11,11 @@ form.addEventListener("submit", (e) => {
   fetchWeather(input.value)
 })
 
-async function fetchWeather(city:string) {
+async function fetchWeather(city: string) {
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20370396598f014dfec9a4efab56a08f`)
-    const data = response.json()
-
-    updateResultUI(data)
+    const data = await response.json()
+    updateResultUI(data.weather[0].main)
     resultContainer.style.display = "block"
   } catch (error) {
     console.log(error)
@@ -25,7 +24,18 @@ async function fetchWeather(city:string) {
   }
 }
 
-function updateResultUI(data: Promise<any>){
+function updateResultUI(weatherMain: string) {
   const logo = document.getElementById("result-logo") as HTMLImageElement
-  logo.src = "/rain.svg"
+  const resultHead = document.getElementById("result-head") as HTMLHeadingElement
+
+  if (weatherMain == "Clear") {
+    logo.src = "/sun.svg"
+    resultHead.innerHTML = "YOU CAN DRY YOUR CLOTHES !"
+  } else if (weatherMain == "Clouds") {
+    logo.src = "/cloudy.svg"
+    resultHead.innerHTML = "CAN BE RISKY !"
+  } else {
+    logo.src = "/rain.svg"
+    resultHead.innerHTML = "AVOID DRYING YOUR CLOTHES !"
+  }
 }
