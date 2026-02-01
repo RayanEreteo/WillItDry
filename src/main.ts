@@ -1,4 +1,12 @@
 // HTML elements ref
+
+//? Paramètre,Condition Idéale
+
+//? Ciel,Dégagé ou peu nuageux
+//? Humidité,Basse (< 60%)
+//? Vent,Modéré (10-25 km/h)
+//? Précipitations,0% (Évidemment !)
+
 const form = document.getElementById("dry-form") as HTMLFormElement
 const input = document.getElementById("city-input") as HTMLInputElement
 const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement
