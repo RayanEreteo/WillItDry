@@ -33,9 +33,24 @@ function updateResultUI(weatherMain: string) {
     resultHead.innerHTML = "YOU CAN DRY YOUR CLOTHES !"
   } else if (weatherMain == "Clouds") {
     logo.src = "/cloudy.svg"
-    resultHead.innerHTML = "CAN BE RISKY !"
+    resultHead.innerHTML = "NOT OPTIMAL !"
   } else {
     logo.src = "/rain.svg"
     resultHead.innerHTML = "AVOID DRYING YOUR CLOTHES !"
   }
 }
+
+function searchUserLoc() {
+  navigator.geolocation.getCurrentPosition(async (position) => {
+    const { latitude, longitude } = position.coords
+
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+    )
+    const data = await res.json()
+
+    input.value = data.address.city
+  })
+}
+
+searchUserLoc()
