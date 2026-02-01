@@ -27,16 +27,20 @@ async function fetchWeather(city: string) {
 function updateResultUI(weatherMain: string) {
   const logo = document.getElementById("result-logo") as HTMLImageElement
   const resultHead = document.getElementById("result-head") as HTMLHeadingElement
+  const resultDescription = document.getElementById("result-desc") as HTMLElement
 
   if (weatherMain == "Clear") {
     logo.src = "/sun.svg"
     resultHead.innerHTML = "YOU CAN DRY YOUR CLOTHES !"
+    resultDescription.innerHTML = "The sky is clear and the sun is shining."
   } else if (weatherMain == "Clouds") {
     logo.src = "/cloudy.svg"
     resultHead.innerHTML = "NOT OPTIMAL !"
+    resultDescription.innerHTML = "Scattered cloud, not optimal."
   } else {
     logo.src = "/rain.svg"
     resultHead.innerHTML = "AVOID DRYING YOUR CLOTHES !"
+    resultDescription.innerHTML = "High risk of rain !"
   }
 }
 
