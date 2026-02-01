@@ -16,6 +16,11 @@ const IDEAL_CONDITIONS = {
 form.addEventListener("submit", (e) => {
   submitBtn.disabled = true
   e.preventDefault()
+
+  if (input.value == "") {
+    return
+  }
+
   fetchWeather(input.value)
 })
 
