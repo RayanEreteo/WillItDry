@@ -86,10 +86,9 @@ button:disabled {
 }
 
 /* Results styling */
-.results-container {
+#result-container {
   margin-top: 2rem;
-  text-align: center;
-  
+  display: none;
 }
 
 #result-logo {
