@@ -18,6 +18,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault()
 
   if (input.value == "") {
+    submitBtn.disabled = false
     return
   }
 
