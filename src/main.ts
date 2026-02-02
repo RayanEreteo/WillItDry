@@ -1,9 +1,7 @@
 // HTML elements ref
-
 const form = document.getElementById("dry-form") as HTMLFormElement
 const input = document.getElementById("city-input") as HTMLInputElement
 const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement
-
 const resultContainer = document.getElementById("result-container") as HTMLElement
 
 const IDEAL_CONDITIONS = {
