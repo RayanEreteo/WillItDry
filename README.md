@@ -1,6 +1,6 @@
 # WillItDry
 
-A utility to check if conditions are favorable for drying.
+A website to check if conditions are favorable for drying.
 
 ## Installation
 
